@@ -4,7 +4,7 @@ import TodoItem from "./components/todoItem";
 
 function App() {
   const [todos, setTodos] = useLocalStorage("todos", [
-    { msg: "First to do hehee", status: false },
+    { msg: "checking todo item", status: false },
   ]);
 
   function handleSearchValue(value) {
