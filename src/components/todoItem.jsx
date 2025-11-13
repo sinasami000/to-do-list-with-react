@@ -11,7 +11,7 @@ const deleteButtonStyles = `${buttonBaseStyles} bg-red-500 hover:bg-red-600 focu
 const doneButtonStyles = `${buttonBaseStyles} bg-green-600 hover:bg-green-700 focus:ring-2 focus:ring-green-300`;
 
 function TodoItem({ todo, todos, setTodos }) {
-  const [editvalue, setEditValue] = useState("");
+  const [editvalue, setEditValue] = useState(todo.msg);
   const [open, setOpen] = useState(false);
   const [editStatus, setEditStatus] = useState(false);
 
@@ -24,7 +24,7 @@ function TodoItem({ todo, todos, setTodos }) {
 
   function saveEditedtodo(todomsg) {
     const newTodos = todos.map((each) =>
-      each.msg === todo.msg ? { ...each, status: true, msg: todomsg } : each
+      each.msg === todo.msg ? { ...each, status: false, msg: todomsg } : each
     );
     setTodos(newTodos);
   }
